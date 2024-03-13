@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_2</title>
+</head>
+<body>
+    <script>
+        // let num1 = prompt('Введіть перший масив чисел, через пробіл');
+        // arr1 = num1.split(' ');
+        // let inputOperator = prompt('Оберіть оператор +,-, *, /');
+        // let num2 = prompt('Введіть другий масив чисел, через пробіл');
+        // arr2 = num2.split(' ');
+
+        arr1 = [5, 2, 7, 10, 125, 13];
+        arr2 = [7, 8, 14, 61, 38, 22, 31];
+        function calculate(a, b, operator){
+            if(a instanceof Array && b instanceof Array){
+                let arrResult = [];
+                let length = 0;
+
+                if(a.length >= b.length){
+                    length = a.length;
+                }else{
+                    length = b.length;
+                }
+
+                for(let i=0; i<length; i++){
+
+                    let operand1 = Number(a[i]);
+                    let operand2 = Number(b[i]);
+
+                    if(isNaN(operand1)){
+                        operand1 = 0;
+                    }
+                    if(isNaN(operand2)){
+                        operand2 = 0;
+                    }
+
+                    switch(operator){
+                        case "+":
+                            arrResult[i] = operand1 + operand2;
+                            break;
+                        case "-":
+                            arrResult[i] = operand1 - operand2;
+                            break;
+                        case "*":
+                            arrResult[i] = operand1 * operand2;
+                            break;
+                        case "/":
+                            if(operand2===0){
+                                alert("На '0' ділити не можно!");
+                            }else{
+                                arrResult[i] = operand1 / operand2;
+                            }
+                            break;
+                        default:
+                            alert("Введеного оператора не існує.");
+                    }
+                }
+                console.log(arrResult);
+            }
+        }
+        calculate(arr1, arr2, "+")
+    </script>
+</body>
+</html>

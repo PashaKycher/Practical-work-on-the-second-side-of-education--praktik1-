@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_1</title>
+</head>
+<body>
+    <script>
+        let num1 = +prompt('Введіть перше число');
+        let inputOperator = prompt('Оберіть оператор +,-, *, /');
+        let num2 = +prompt('Введіть друге число');
+        let resylt = 0;
+
+        function calculate(a, b, operator){
+            a = num1;
+            b = num2;
+            operator = inputOperator;
+
+            if (isNaN(a)){
+                alert("Перше значення не є числом");
+            }else if (isNaN(b)){
+                alert("Друге значення не є числом");
+            }else if(operator == "+" || operator == "-" || operator == "*" || operator == "/"){
+                switch(operator){
+                    case "+": 
+                    resylt = a + b;
+                    alert(`${a} + ${b} = ${resylt}`);
+                    break;
+
+                    case "-": 
+                    resylt = a - b;
+                    alert(`${a} - ${b} = ${resylt}`);
+                    break;
+
+                    case "*": 
+                    resylt = a * b;
+                    alert(`${a} * ${b} = ${resylt}`);
+                    break;
+
+                    case "/": 
+                    if (b===0){
+                        alert("На '0' ділити не можно!");
+                    }else{
+                        resylt = a / b;
+                    alert(`${a} / ${b} = ${resylt}`);
+                    }
+                    break;
+                }
+            }else{
+                alert("Введеного оператора не існує.");
+            }
+        }
+        calculate();
+    </script>
+</body>
+</html>
